@@ -2,6 +2,9 @@
 
 var TelegramBot = require('node-telegram-bot-api');
 // var token = '120468813:AAHeg2aGmnzXdzeRIem-TBjnCTkX9HHxkVM';
+var botantoken = '80701';
+var botan = require('botanio')(botantoken);
+
 
 var token = '120565725:AAEalgLPaVIHFSYngYnOO6-W-pTwvrRNXwI';
 var RestaurantArray = ["РќР° РїРѕР»СЏРЅРµ",
@@ -63,6 +66,7 @@ bot.on('message', function (msg) {
     console.log(msg);
 	//var myString = "Сегодня выиграл ресторан "+randRest;
 	// myString = JSON.parse( JSON.stringify( myString ) )
+	botan.track(message, 'Start');
     bot.sendSticker(chatId, randSticker);
 	bot.sendMessage(chatId, "РЎРµРіРѕРґРЅСЏ РїСЂРµРґР»Р°РіР°РµС‚СЃСЏ РїРѕСЃРµС‚РёС‚СЊ "+randRest , {caption: "This is Dalet Bot from RT"});
 	// bot.sendMessage(chatId, msg.text , {caption: "This is Dalet Bot from RT"});
