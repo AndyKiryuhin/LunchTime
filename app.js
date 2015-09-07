@@ -70,7 +70,10 @@ bot.on('message', function (msg) {
 	var botan = require('botanio')(botantoken);
 	botan.track(msg, 'Start');
     bot.sendSticker(chatId, randSticker);
-	bot.sendMessage(chatId, "Сегодня предлагается посетить "+randRest , {caption: "This is Dalet Bot from RT"});
+	console.log("Sticker send:" + randSticker);
+	var msgRest = "Сегодня предлагается посетить ресторан "+randRest;
+	bot.sendMessage(chatId, msgRest, {caption: "This is Dalet Bot from RT"});
+	console.log(msgRest);
 	// bot.sendMessage(chatId, msg.text , {caption: "This is Dalet Bot from RT"});
 	
 });
